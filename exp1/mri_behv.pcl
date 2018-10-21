@@ -1,0 +1,120 @@
+#main_trial.present();     
+#stim_event.set_time(300);
+#main_trial.present();  
+#stim.set_part(1,blue_box);           
+            
+#--------------------------------------------------------------
+# read data using input_file type  
+
+# places to put the data
+# doesn't assume table size - 1500 line maximum         
+array<int> seq_vsize[1500];
+array<int> seq_vlightness[1500];
+array<int> seq_apitch[1500];
+array<int> seq_aloc[1500];  
+ 
+input_file in = new input_file;
+in.open( "./seq/seq.txt" );
+
+# in.set_delimiter( '\t' ); # for get_line() 
+int count = 0;
+loop until
+   in.end_of_file() || count == 1500 || !in.last_succeeded()
+begin
+   count = count + 1;
+   seq_vsize[count] = in.get_int();
+   seq_vlightness[count] = in.get_int();
+   seq_apitch[count] = in.get_int();
+   seq_aloc[count] = in.get_int();
+end;  
+
+if !in.last_succeeded() then
+   term.print( "Error while reading!\n" )
+elseif !in.end_of_file() then
+   term.print( "Exceeded capacity!\n" )
+end;
+/*
+#--------------------------------------------------------------
+# print to terminal to see if we got it right
+#term.print( column_names[1] + "\t" + column_names[2] + "\t" +
+#            column_names[3] + "\t" + column_names[4] + "\n" );
+loop
+   int i = 1
+until
+   i > count
+begin
+   term.print( seq_vsize[i] );
+   term.print( "\t" );
+   term.print( seq_vlightness[i] );
+   term.print( "\t" );
+   term.print( seq_apitch[i] );
+   term.print( "\t" );
+   term.print( seq_aloc[i] );
+   term.print( "\n" );
+   i = i + 1
+end     
+*/
+# trans data to 2D array 
+int PARA_TOTAL = 4;
+int TRIAL_TOTAL = 1500;
+array<int> prac_trial_list[TRIAL_TOTAL][PARA_TOTAL];
+loop int i = 1 until i > TRIAL_TOTAL
+begin
+   prac_trial_list[i][1] = seq_vsize[i];
+   prac_trial_list[i][2] = seq_vlightness[i];
+   prac_trial_list[i][3] = seq_apitch[i];
+   prac_trial_list[i][4] = seq_aloc[i];
+   term.print("visual size = " + string(prac_trial_list[i][1]) + ", visual lightness = " + string(prac_trial_list[i][2]) + ", audio pitch = " + string(prac_trial_list[i][3]) + ", audio location = " + string(prac_trial_list[i][4]) + "\n"); 
+end; 
+/*
+# parameters  
+int V_SIZE = 2;
+int V_LIGHTNESS = 2;  
+int A_PITCH = 2;
+int A_LOCATION = 5; 
+int REPEATE = 3;
+
+# set up and randomize formal trials    
+int ii = 1;
+array<int> prac_trial_list[V_SIZE*V_LIGHTNESS*A_PITCH*A_LOCATION*REPEATE][4];
+loop int vsize = 1 until vsize > V_SIZE
+begin
+   loop int vlightness = 1 until vlightness > V_LIGHTNESS
+   begin       
+      loop int apitch = 1 until apitch > A_PITCH
+      begin
+         loop int alocation = 1 until alocation > A_LOCATION
+         begin
+            loop int repeate = 1 until repeate > REPEATE
+            begin
+               term.print("visual size = " + string(vsize) + ", visual lightness = " + string(vlightness) + ", audio pitch = " + string(apitch) + ", audio location = " + string(alocation) + "\n");  
+               prac_trial_list[ii][1]=vsize; 
+               prac_trial_list[ii][2]=vlightness;
+               prac_trial_list[ii][3]=apitch;
+               prac_trial_list[ii][4]=alocation;
+               ii = ii + 1;
+               repeate = repeate + 1;
+            end;
+            alocation = alocation + 1;
+         end;
+         apitch = apitch + 1;
+      end;     
+      vlightness = vlightness + 1;
+   end;
+   vsize = vsize + 1; 
+end;    
+*/
+                 
+# check practice trial list
+/*
+loop int i=1 until i > prac_trial_list.count()
+begin 
+   term.print(prac_trial_list[i][1]);
+   term.print(prac_trial_list[i][2]); 
+   term.print("\n");
+   i=i+1;
+end;
+*/
+   
+#main_trial.present();
+
