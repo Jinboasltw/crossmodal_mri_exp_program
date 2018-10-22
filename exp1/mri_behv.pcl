@@ -8,6 +8,7 @@
 #--------------------------------------------------------------
 string subj = logfile.subject();
 int trial_mark = 1;
+int index_count = 0;
 string COMMA = ",";
 string RETURN = "\n";
 string data_file_name = subj + "-data.csv";
@@ -52,7 +53,7 @@ end;
 sub 
    record_acc_rt
 begin
-	 stimulus_data last = stimulus_manager.last_stimulus_data();
+	stimulus_data last = stimulus_manager.last_stimulus_data();
 	if last.type() == stimulus_hit then
 		record("Correct");
 		record(string(last.reaction_time()));
@@ -67,7 +68,11 @@ end;
 sub 
    record_button_rt_mark
 begin
-	stimulus_data last = stimulus_manager.last_stimulus_data();
+	#stimulus_data last = stimulus_manager.last_stimulus_data();
+	index_count = stimulus_manager.stimulus_count( ); 
+	term.print_line(string(index_count));
+	stimulus_data last = stimulus_manager.get_stimulus_data( index_count-2 );
+	
 	record(string(last.button()));
    record(string(last.reaction_time())); 
 	if last.type() == stimulus_hit then 

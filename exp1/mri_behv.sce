@@ -4,7 +4,8 @@
 response_matching = simple_matching;
 active_buttons = 3; 
 button_codes = 1,2,3; 
-$left_ans = 1;
+$left_response = 1;
+$interval = '1000/60';
 scenario = "MRI Behv Part";    
 scenario_type = trials;
 #no_logfile = true;
@@ -14,7 +15,7 @@ scenario_type = trials;
 #--------------------------------------------------------------
 pcl_file = "mri_behv.pcl";
 
-begin; 
+begin;
 picture {} default;  
 #--------------------------------------------------------------
 #                          Stim Prepare
@@ -141,7 +142,8 @@ trial{
    
    stimulus_event{
       picture welcome;
-      deltat = 92; 
+      time = 0;
+		#deltat = 0; 
       code="welcome";       
    }welcome_event;
 }welcome_trial;
@@ -156,27 +158,30 @@ trial{
       picture fixation;     
       time = 0; 
       code="fix";
+		response_active = false;
    } fix_event;
-   
-   stimulus_event  {  
-      # placeholder - set by PCL
-      picture pic1;
-      time = 100;
-      code="vis"; 
-   } vis_event;
-   
+
    stimulus_event  {  
       # placeholder - set by PCL
       sound snd1;  
-      time = 100;
+      time = 'int(100-0.5*$interval)';
       response_active = true;
-      target_button = 1;
+      target_button = $left_response;
       code="snd"; 
    } snd_event;
+
+   stimulus_event  {  
+      # placeholder - set by PCL
+      picture pic1;
+      time = 'int(100-0.5*$interval)';
+		response_active = false;
+      code="vis"; 
+   } vis_event;
                 
    stimulus_event  {  
       picture fixation; 
-      time = 200;
+      time = 'int(200-0.5*$interval)';
+		response_active = false;
       code="blankScreen"; 
    } bk_event;
                 
