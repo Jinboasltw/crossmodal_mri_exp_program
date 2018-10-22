@@ -2,11 +2,86 @@
 #stim_event.set_time(300);
 #main_trial.present();  
 #stim.set_part(1,blue_box);           
-            
+
+#--------------------------------------------------------------
+#                          SUB ROUTINE: Record
+#--------------------------------------------------------------
+string subj = logfile.subject();
+int trial_mark = 1;
+string COMMA = ",";
+string RETURN = "\n";
+string data_file_name = subj + "-data.csv";
+output_file out = new output_file;
+out.open("./data/" + data_file_name);
+array<string> headings[9];
+headings[1] = "subject";
+headings[2] = "trial";
+headings[3] = "visual_size";
+headings[4] = "visual_brightness";
+headings[5] = "audio_pitch"; 
+headings[6] = "audio_location";
+headings[7] = "button";
+headings[8] = "RT";
+headings[9] = "LeftAnsMark";  # left or right
+loop int i = 1 until i > headings.count()
+begin
+	if i != headings.count() then
+		out.print(headings[i] + COMMA);
+	elseif i == headings.count() then
+		out.print(headings[i]);
+	end;
+	i = i + 1;
+end;
+out.print(RETURN);
+out.close();
+int wrap_count = 0;
+sub 
+   record(string info)
+begin
+    out.open_append( "./data/" + data_file_name );
+	 wrap_count = wrap_count + 1;
+	 if wrap_count%(headings.count()) != 0 then
+		out.print(info);
+		out.print(COMMA);
+	 else
+		out.print(info);
+		out.print(RETURN);
+	 end;
+   out.close();
+end;
+sub 
+   record_acc_rt
+begin
+	 stimulus_data last = stimulus_manager.last_stimulus_data();
+	if last.type() == stimulus_hit then
+		record("Correct");
+		record(string(last.reaction_time()));
+	elseif last.type() == stimulus_incorrect then
+		record("Wrong");
+		record(string(last.reaction_time()));
+	else
+		record("");
+		record("");
+	end;
+end; 
+sub 
+   record_button_rt_mark
+begin
+	stimulus_data last = stimulus_manager.last_stimulus_data();
+	record(string(last.button()));
+   record(string(last.reaction_time())); 
+	if last.type() == stimulus_hit then 
+      record("left");
+	elseif last.type() == stimulus_incorrect then
+      record("right");
+	else
+		record("");
+	end;
+end;          
+#--------------------------------------------------------------
+#                          Present Setup
 #--------------------------------------------------------------
 # read data using input_file type  
-
-# places to put the data
 input_file in = new input_file;
 in.open( "./seq/seq.txt" );
 
@@ -24,7 +99,7 @@ begin
    prac_trial_list[count][2] = in.get_int();
    prac_trial_list[count][3] = in.get_int();
    prac_trial_list[count][4] = in.get_int();
-   term.print("visual size = " + string(prac_trial_list[count][1]) + ", visual lightness = " + string(prac_trial_list[count][2]) + ", audio pitch = " + string(prac_trial_list[count][3]) + ", audio location = " + string(prac_trial_list[count][4]) + "\n");
+   #term.print("visual size = " + string(prac_trial_list[count][1]) + ", visual lightness = " + string(prac_trial_list[count][2]) + ", audio pitch = " + string(prac_trial_list[count][3]) + ", audio location = " + string(prac_trial_list[count][4]) + "\n");
 end;  
 
 if !in.last_succeeded() then
@@ -34,7 +109,116 @@ elseif !in.end_of_file() then
    term.print(string(count));
 end;
 done_trial.present();
-main_trial.present(); 
+#--------------------------------------------------------------
+#                          Additional Setup
+#--------------------------------------------------------------
+int relax_count = 75;
+int block_count = 150; # in total 10 blocks
+int total_block = 10;
+array<int> iti[4] = {500,600,700,800}; 
+int relax_counter = 0;
+int block_counter = 0;
+#--------------------------------------------------------------
+#                          Start PRESENTATION
+#-------------------------------------------------------------- 
+welcome_trial.present(); 
+#--------------------------------------------------------------
+#                          Show Practice Trials
+#-------------------------------------------------------------- 
+#--------------------------------------------------------------
+#                          Show Formal Trials
+#-------------------------------------------------------------- 
+int vsize = -1;
+int vbright = -1;
+int apitch = -1;
+int aloc = -1;
+
+loop int i = 1 until i > prac_trial_list.count()
+begin
+      record(subj);
+      record(string(i));                   
+      vsize = prac_trial_list[i][1];        # 1 = big,2 = small,0 = none
+      vbright = prac_trial_list[i][2];      # 1 = high bright,2 = low bright,0 = none
+      apitch = prac_trial_list[i][3];       # 1 = high pitch,2 = low pitch
+      aloc = prac_trial_list[i][4];         # 1 = Left 22.5 ,2 = Left 10,3 = Central 0; 4 = Right 10;5 = Right 22.5; 1-5 High Pitch; 6-10 Low Pitch
+      #term.print(string(vsize)+string(vbright)+"\n");
+      record(string(vsize));
+      record(string(vbright));
+      record(string(apitch));
+      record(string(aloc));
+      if apitch == 1 then
+         if aloc == 1 then
+            snd_event.set_stimulus( snds[1] )
+         elseif aloc == 2 then
+            snd_event.set_stimulus( snds[2] )
+         elseif aloc == 3 then                
+            snd_event.set_stimulus( snds[3] )
+         elseif aloc == 4 then
+            snd_event.set_stimulus( snds[4] )
+         elseif aloc == 5 then
+            snd_event.set_stimulus( snds[5] )
+         end
+      elseif apitch == 2 then
+         if aloc == 1 then
+            snd_event.set_stimulus( snds[6] )
+         elseif aloc == 2 then
+            snd_event.set_stimulus( snds[7] )
+         elseif aloc == 3 then                
+            snd_event.set_stimulus( snds[8] )
+         elseif aloc == 4 then
+            snd_event.set_stimulus( snds[9] )
+         elseif aloc == 5 then
+            snd_event.set_stimulus( snds[10] )
+         end
+      end;
+      if vsize == 1 then
+         if vbright == 1 then
+            vis_event.set_stimulus( pics[1] )
+         elseif vbright == 2 then
+            vis_event.set_stimulus( pics[3] )
+         elseif vbright == 0 then                
+            vis_event.set_stimulus( pics[5] )
+         end
+      elseif vsize == 2 then
+         if vbright == 1 then
+            vis_event.set_stimulus( pics[2] )
+         elseif vbright == 2 then
+            vis_event.set_stimulus( pics[4] )
+         elseif vbright == 0 then                
+            vis_event.set_stimulus( pics[5] )
+         end 
+      elseif vsize == 0 then
+         if vbright == 1 then
+            vis_event.set_stimulus( pics[5] )
+         elseif vbright == 2 then
+            vis_event.set_stimulus( pics[5] )
+         elseif vbright == 0 then                
+            vis_event.set_stimulus( pics[5] )
+         end
+      end;     
+             
+      main_trial.present();
+      record_button_rt_mark();
+        
+      interval_trials.set_duration(iti[random(1,4)]);
+      interval_trials.present();  
+      
+      relax_counter = relax_counter+1;
+      if relax_counter == relax_count && mod(i,block_count) != 0 then
+         relax_trial.present();
+         relax_counter = 0;
+      end;
+      if mod(i,block_count) == 0 && block_counter != total_block then
+         block_trial.present();
+         block_counter = block_counter+1;
+      end;     
+   i=i+1;  
+end;
+bye_trial.present();
+
+ 
+
+
 /*
 #--------------------------------------------------------------
 # print to terminal to see if we got it right

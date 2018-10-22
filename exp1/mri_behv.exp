@@ -43,10 +43,10 @@
 <delimiter>9</delimiter>
 <general_list>1</general_list>
 <set_def_file></set_def_file>
-<stimulus_list>0</stimulus_list>
+<stimulus_list>1</stimulus_list>
 <subject_id></subject_id>
 <subject_id_pol>0</subject_id_pol>
-<video_list>0</video_list>
+<video_list>1</video_list>
 </log>
 <lol>1</lol>
 <lpr></lpr>
@@ -126,8 +126,8 @@
 <sfn>E:\mri_data\exp\crossmodal_mri_exp_program\exp1\mri_behv.exp</sfn>
 </sce>
 <sde>
-<custom_buf>sec_hw</custom_buf>
-<mixer>dx_software</mixer>
+<custom_buf>primary</custom_buf>
+<mixer>custom</mixer>
 </sde>
 <sdv>Ö÷ÉùÒôÇý¶¯³ÌÐò</sdv>
 <smc>2</smc>
