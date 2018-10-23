@@ -54,14 +54,26 @@ picture {
       font_size = 36;
       font_color = 100,200,200;
    };*/
-	bitmap { filename = "instruction.bmp"; preload = true; } ;
+	bitmap { filename = "instruction_exp_part1.bmp"; preload = true; } ;
+   x = 0;y = 0;
+}welcome_1;
+
+picture {
+	/*
+   text{
+      caption = "Welcome";
+      font_size = 36;
+      font_color = 100,200,200;
+   };*/
+	bitmap { filename = "instruction_exp_part2.bmp"; preload = true; } ;
    x = 0;y = 0;
    text {
-      caption = "(Press Tab button to practice)"; 
+      caption = "(Press Start button to practice)";
+		font_size = 24; 
    }welcome_text; 
-   x = 0; y = -400;
-}welcome;
-       
+   x = 540; y = -400;
+}welcome_2;
+      
 picture {
    /*
    text{     
@@ -109,7 +121,7 @@ picture {
    }tsug; 
    x = 0; y = 0;
    text {
-      caption = "(Press Tab button to continue)"; 
+      caption = "(Press Start button to continue)"; 
    }; 
    x = 0; y = -400;
 }summary;
@@ -122,7 +134,7 @@ picture {
    };
    x = 0;y = 0;
    text {
-      caption = "(Press Tab button to continue)"; 
+      caption = "(Press Start button to continue)"; 
    }; 
    x = 0; y = -400;
 }relax;
@@ -135,7 +147,7 @@ picture {
    }block_info;
    x = 0;y = 0;
    text {
-      caption = "(Press Tab button to continue)"; 
+      caption = "(Press Start button to continue)"; 
    }; 
    x = 0; y = -400;
 }block;
@@ -148,7 +160,7 @@ picture {
    };
    x = 0;y = 0;
    text {
-      caption = "(Press Tab button to exit)"; 
+      caption = "(Press Start button to exit)"; 
    }; 
    x = 0; y = -400;
 }bye;
@@ -188,11 +200,14 @@ trial{
    terminator_button  = 3;
    
    stimulus_event{
-      picture welcome;
+      picture welcome_1;
       time = 0;
 		#deltat = 0; 
       code="welcome";       
    }welcome_event;
+
+   picture welcome_2;
+   time = 5000;
 }welcome_trial;
 
 trial{        

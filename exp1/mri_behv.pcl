@@ -181,7 +181,7 @@ if prac_marker == 1 then
 	int paloc = -1;
 	
 	double pc_record = 0;
-	welcome_text.set_caption("(Press Tab button to practice)",true);
+	welcome_text.set_caption("(Press Start button to practice)",true);
 	welcome_trial.present();
 	loop int god = 1 until god == 0
 	begin
@@ -312,7 +312,7 @@ elseif prac_marker == 0 then
 	int vbright = -1;
 	int apitch = -1;
 	int aloc = -1;
-	welcome_text.set_caption("(Press Tab button to formal test)",true);
+	welcome_text.set_caption("(Press Start button to formal test)",true);
 	welcome_trial.present();
 	loop int i = 1 until i > trial_list.count()
 	begin
