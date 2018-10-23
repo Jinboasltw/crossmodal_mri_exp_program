@@ -57,8 +57,8 @@ picture {
 	bitmap { filename = "instruction.bmp"; preload = true; } ;
    x = 0;y = 0;
    text {
-      caption = "(Press Tab button to continue)"; 
-   }; 
+      caption = "(Press Tab button to practice)"; 
+   }welcome_text; 
    x = 0; y = -400;
 }welcome;
        
@@ -76,6 +76,46 @@ picture {
 
 picture {
    text{
+      caption = "ACC";
+      font_size = 24;
+      font_color = 255,255,255;
+   }acc;
+   x = 0;y = 100;
+   text {
+      caption = "RT"; 
+      font_size = 24;
+      font_color = 255,255,255;
+   }rt; 
+   x = 0; y = 0;
+   text {
+      caption = "Suggest"; 
+      font_size = 24;
+      font_color = 255,0,255;
+   }sug; 
+   x = 0; y = -100;
+}feed_back;
+
+picture {
+   text{
+      caption = "PC";
+      font_size = 24;
+      font_color = 255,255,255;
+   }tacc;
+   x = 0;y = 100; 
+   text {
+      caption = "Suggest"; 
+      font_size = 24;
+      font_color = 255,0,255;
+   }tsug; 
+   x = 0; y = 0;
+   text {
+      caption = "(Press Tab button to continue)"; 
+   }; 
+   x = 0; y = -400;
+}summary;
+
+picture {
+   text{
       caption = "Take a Break";
       font_size = 36;
       font_color = 100,200,200;
@@ -89,10 +129,10 @@ picture {
     
 picture {
    text{
-      caption = "Part 1/10 Finish\nPart 2/10 Next";
+      caption = "temp";
       font_size = 36;
       font_color = 100,200,200;
-   };
+   }block_info;
    x = 0;y = 0;
    text {
       caption = "(Press Tab button to continue)"; 
@@ -120,9 +160,9 @@ trial{
    trial_duration = 100;
    picture {
       text{     
-         caption = "loading seq...";
-         font_size = 48;
-         font_color = 255,255,255;
+         caption = "Loading...";
+         font_size = 24;
+         font_color = 255,0,0;
       }; 
       x=0;y=0;
    }loading;     
@@ -130,11 +170,11 @@ trial{
 }loading_trial;
 
 trial{        
-   trial_duration = 1000;
+   trial_duration = 500;
    picture {
       text{     
-         caption = "loading seq: sucess!";
-         font_size = 48;
+         caption = "loading success!";
+         font_size = 24;
          font_color = 0,255,0;
       }; 
       x=0;y=0;
@@ -193,6 +233,28 @@ trial{
    } pbk_event;
                 
 }pmain_trial;
+
+trial{        
+   trial_duration = 1000;
+   
+   stimulus_event{
+      picture feed_back;
+      deltat = 0; 
+      code="feed";       
+   }feed_back_event;
+}feed_back_trial;
+
+trial{        
+   trial_duration = forever;
+   trial_type=specific_response; 
+   terminator_button  = 3;
+   
+   stimulus_event{
+      picture summary;
+      deltat = 0; 
+      code="summary";       
+   }summary_event;
+}summary_trial;
 
 trial{        
    trial_duration = forever;   

@@ -167,7 +167,10 @@ int block_counter = 0;
 #--------------------------------------------------------------
 #                          Start PRESENTATION
 #-------------------------------------------------------------- 
-welcome_trial.present();
+string text_pc;
+string text_rt;
+string text_rt_suggest;
+
 if prac_marker == 1 then 
 	#--------------------------------------------------------------
 	#                          Show Practice Trials
@@ -176,81 +179,131 @@ if prac_marker == 1 then
 	int pvbright = -1;
 	int papitch = -1;
 	int paloc = -1;
-
-	loop int i = 1 until i > prac_trial_list.count()
-	begin             
-			pvsize = prac_trial_list[i][1];        # 1 = big,2 = small,0 = none
-			pvbright = prac_trial_list[i][2];      # 1 = high bright,2 = low bright,0 = none
-			papitch = prac_trial_list[i][3];       # 1 = high pitch,2 = low pitch
-			paloc = prac_trial_list[i][4];         # 1 = Left 22.5 ,2 = Left 10,3 = Central 0; 4 = Right 10;5 = Right 22.5; 1-5 High Pitch; 6-10 Low Pitch
-			#term.print(string(vsize)+string(vbright)+"\n");
-			if papitch == 1 then
-				if paloc == 1 then
-					psnd_event.set_stimulus( snds[1] )
-				elseif paloc == 2 then
-					psnd_event.set_stimulus( snds[2] )
-				elseif paloc == 3 then                
-					psnd_event.set_stimulus( snds[3] )
-				elseif paloc == 4 then
-					psnd_event.set_stimulus( snds[4] )
-				elseif paloc == 5 then
-					psnd_event.set_stimulus( snds[5] )
-				end
-			elseif papitch == 2 then
-				if paloc == 1 then
-					psnd_event.set_stimulus( snds[6] )
-				elseif paloc == 2 then
-					psnd_event.set_stimulus( snds[7] )
-				elseif paloc == 3 then                
-					psnd_event.set_stimulus( snds[8] )
-				elseif paloc == 4 then
-					psnd_event.set_stimulus( snds[9] )
-				elseif paloc == 5 then
-					psnd_event.set_stimulus( snds[10] )
-				end
-			end;
-			if pvsize == 1 then
-				if pvbright == 1 then
-					pvis_event.set_stimulus( pics[1] )
-				elseif pvbright == 2 then
-					pvis_event.set_stimulus( pics[3] )
-				elseif pvbright == 0 then                
-					pvis_event.set_stimulus( pics[5] )
-				end
-			elseif pvsize == 2 then
-				if pvbright == 1 then
-					pvis_event.set_stimulus( pics[2] )
-				elseif pvbright == 2 then
-					pvis_event.set_stimulus( pics[4] )
-				elseif pvbright == 0 then                
-					pvis_event.set_stimulus( pics[5] )
-				end 
-			elseif pvsize == 0 then
-				if pvbright == 1 then
-					pvis_event.set_stimulus( pics[5] )
-				elseif pvbright == 2 then
-					pvis_event.set_stimulus( pics[5] )
-				elseif pvbright == 0 then                
-					pvis_event.set_stimulus( pics[5] )
-				end
-			end;     
-					 
-			pmain_trial.present();
-			  
-			interval_trials.set_duration(iti[random(1,4)]);
-			interval_trials.present();  
-			
-			prac_relax_counter = prac_relax_counter+1;
-			if prac_relax_counter == prac_relax_count && mod(i,prac_block_count) != 0 then
-				relax_trial.present();
-				prac_relax_counter = 0;
-			end;
-			if mod(i,prac_block_count) == 0 && prac_block_counter != prac_total_block then
-				block_trial.present();
-				prac_block_counter = prac_block_counter+1;
-			end;     
-		i=i+1;  
-	end;
+	
+	double pc_record = 0;
+	welcome_text.set_caption("(Press Tab button to practice)",true);
+	welcome_trial.present();
+	loop int god = 1 until god == 0
+	begin
+		loop int i = 1 until i > prac_trial_list.count()
+		begin             
+				pvsize = prac_trial_list[i][1];        # 1 = big,2 = small,0 = none
+				pvbright = prac_trial_list[i][2];      # 1 = high bright,2 = low bright,0 = none
+				papitch = prac_trial_list[i][3];       # 1 = high pitch,2 = low pitch
+				paloc = prac_trial_list[i][4];         # 1 = Left 22.5 ,2 = Left 10,3 = Central 0; 4 = Right 10;5 = Right 22.5; 1-5 High Pitch; 6-10 Low Pitch
+				#term.print(string(vsize)+string(vbright)+"\n");
+				if papitch == 1 then
+					if paloc == 1 then
+						psnd_event.set_stimulus( snds[1] )
+					elseif paloc == 2 then
+						psnd_event.set_stimulus( snds[2] )
+					elseif paloc == 3 then                
+						psnd_event.set_stimulus( snds[3] )
+					elseif paloc == 4 then
+						psnd_event.set_stimulus( snds[4] )
+					elseif paloc == 5 then
+						psnd_event.set_stimulus( snds[5] )
+					end
+				elseif papitch == 2 then
+					if paloc == 1 then
+						psnd_event.set_stimulus( snds[6] )
+					elseif paloc == 2 then
+						psnd_event.set_stimulus( snds[7] )
+					elseif paloc == 3 then                
+						psnd_event.set_stimulus( snds[8] )
+					elseif paloc == 4 then
+						psnd_event.set_stimulus( snds[9] )
+					elseif paloc == 5 then
+						psnd_event.set_stimulus( snds[10] )
+					end
+				end;
+				if pvsize == 1 then
+					if pvbright == 1 then
+						pvis_event.set_stimulus( pics[1] )
+					elseif pvbright == 2 then
+						pvis_event.set_stimulus( pics[3] )
+					elseif pvbright == 0 then                
+						pvis_event.set_stimulus( pics[5] )
+					end
+				elseif pvsize == 2 then
+					if pvbright == 1 then
+						pvis_event.set_stimulus( pics[2] )
+					elseif pvbright == 2 then
+						pvis_event.set_stimulus( pics[4] )
+					elseif pvbright == 0 then                
+						pvis_event.set_stimulus( pics[5] )
+					end 
+				elseif pvsize == 0 then
+					if pvbright == 1 then
+						pvis_event.set_stimulus( pics[5] )
+					elseif pvbright == 2 then
+						pvis_event.set_stimulus( pics[5] )
+					elseif pvbright == 0 then                
+						pvis_event.set_stimulus( pics[5] )
+					end
+				end;     
+				if paloc == 1 || paloc == 2 then
+					psnd_event.set_target_button(1);
+				elseif paloc == 5 || paloc == 6 then
+					psnd_event.set_target_button(2);
+				elseif paloc == 3 then
+					psnd_event.set_target_button({1,2});
+				end; 		 
+				pmain_trial.present();
+				stimulus_data plast = stimulus_manager.get_stimulus_data( stimulus_manager.stimulus_count( )-2 );
+				if plast.type() == stimulus_hit then
+					text_pc = "Correct";
+					acc.set_font_color(0,255,0);
+					pc_record = pc_record + 1;
+				elseif plast.type() == stimulus_incorrect then
+					text_pc = "Wrong";
+					acc.set_font_color(255,0,0);	
+				end;
+				
+				text_rt = string(plast.reaction_time());
+				if plast.reaction_time() > rt_limit then
+					text_rt_suggest = "Too Slow";
+				elseif plast.reaction_time() < 100 && plast.reaction_time() != 0  then
+					text_rt_suggest = "Too Fast";
+				elseif plast.reaction_time() == 0 then
+					text_rt_suggest = "missing";
+				else
+					text_rt_suggest = "Keep It";
+				end;
+				acc.set_caption(text_pc,true);
+				rt.set_caption(text_rt+" msecs",true);
+				sug.set_caption(text_rt_suggest,true);
+				feed_back_trial.present();
+	  
+				interval_trials.set_duration(iti[random(1,4)]);
+				interval_trials.present();  
+				
+				prac_relax_counter = prac_relax_counter+1;
+				
+				if prac_relax_counter == prac_relax_count && mod(i,prac_block_count) != 0 then
+					relax_trial.present();
+					prac_relax_counter = 0;
+				end;
+				if mod(i,prac_block_count) == 0 && prac_block_counter != prac_total_block then
+					block_info.set_caption("Finished: Part "+ string(int((i-mod(i,prac_block_count))/prac_block_count)) +"/"+string(prac_total_block)+"\nNext     : Part "+ string(int((i-mod(i,prac_block_count))/prac_block_count)+1) +"/"+string(prac_total_block),true);
+					block_trial.present();
+					prac_block_counter = prac_block_counter+1;
+				end;     
+			i=i+1;  
+		end;
+		pc_record = pc_record/prac_times;
+		if pc_record >= ac_limit then
+			god = 0;
+			tacc.set_caption("Accuracy: "+string(pc_record*100)+" %",true);
+			tsug.set_caption("Enter Formal Test",true);
+			summary_trial.present();
+		elseif pc_record < ac_limit then
+			god = 1;
+			tacc.set_caption(string(pc_record),true);
+			tsug.set_caption("Redo Practice",true);
+			summary_trial.present();
+		end;
+	end;	
 elseif prac_marker == 0 then
 	#--------------------------------------------------------------
 	#                          Show Formal Trials
@@ -259,7 +312,8 @@ elseif prac_marker == 0 then
 	int vbright = -1;
 	int apitch = -1;
 	int aloc = -1;
-
+	welcome_text.set_caption("(Press Tab button to formal test)",true);
+	welcome_trial.present();
 	loop int i = 1 until i > trial_list.count()
 	begin
 			record(subj);
