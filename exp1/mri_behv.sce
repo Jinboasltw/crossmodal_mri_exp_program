@@ -4,10 +4,12 @@
 response_matching = simple_matching;
 active_buttons = 3; 
 button_codes = 1,2,3; 
-$left_response = 1;
-$interval = '1000/60';
 scenario = "MRI Behv Part";    
 scenario_type = trials;
+$left_response = 1;
+$refreshrate = 60;
+$interval = '1000/$refreshrate';
+
 #no_logfile = true;
 #8 = half of refreshing rate at 60Hz display 
 #--------------------------------------------------------------
@@ -74,7 +76,7 @@ picture {
 
 picture {
    text{
-      caption = "Relax";
+      caption = "Take a Break";
       font_size = 36;
       font_color = 100,200,200;
    };
@@ -82,12 +84,12 @@ picture {
    text {
       caption = "(Press Tab button to continue)"; 
    }; 
-   x = 0; y = -200;
+   x = 0; y = -400;
 }relax;
     
 picture {
    text{
-      caption = "Block";
+      caption = "Part 1/10 Finish\nPart 2/10 Next";
       font_size = 36;
       font_color = 100,200,200;
    };
@@ -95,20 +97,20 @@ picture {
    text {
       caption = "(Press Tab button to continue)"; 
    }; 
-   x = 0; y = -200;
+   x = 0; y = -400;
 }block;
         
 picture {
    text{
-      caption = "Bye";
+      caption = "That's All. Thank You.";
       font_size = 36;
       font_color = 100,200,200;
    };
    x = 0;y = 0;
    text {
-      caption = "(Press Tab button to exist)"; 
+      caption = "(Press Tab button to exit)"; 
    }; 
-   x = 0; y = -200;
+   x = 0; y = -400;
 }bye;
 
 #--------------------------------------------------------------
@@ -152,6 +154,45 @@ trial{
       code="welcome";       
    }welcome_event;
 }welcome_trial;
+
+trial{        
+   trial_duration = forever;   
+   #trial_duration = 100;# preview
+   trial_type=first_response; 
+   all_responses=false;
+   
+   stimulus_event {
+      picture fixation;     
+      time = 0; 
+      code="fix";
+		response_active = false;
+   } pfix_event;
+
+   stimulus_event  {  
+      # placeholder - set by PCL
+      sound snd1;  
+      time = 'int(100-0.5*$interval)';
+      response_active = true;
+      target_button = $left_response;
+      code="snd"; 
+   } psnd_event;
+
+   stimulus_event  {  
+      # placeholder - set by PCL
+      picture pic1;
+      time = 'int(100-0.5*$interval)';
+		response_active = false;
+      code="vis"; 
+   } pvis_event;
+                
+   stimulus_event  {  
+      picture fixation; 
+      time = 'int(200-0.5*$interval)';
+		response_active = false;
+      code="blankScreen"; 
+   } pbk_event;
+                
+}pmain_trial;
 
 trial{        
    trial_duration = forever;   
