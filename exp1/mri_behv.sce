@@ -46,16 +46,18 @@ array {
 #                          Element Prepare
 #--------------------------------------------------------------
 picture {
+	/*
    text{
       caption = "Welcome";
       font_size = 36;
       font_color = 100,200,200;
-   };
+   };*/
+	bitmap { filename = "instruction.bmp"; preload = true; } ;
    x = 0;y = 0;
    text {
       caption = "(Press Tab button to continue)"; 
    }; 
-   x = 0; y = -200;
+   x = 0; y = -400;
 }welcome;
        
 picture {
