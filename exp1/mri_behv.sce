@@ -59,11 +59,14 @@ picture {
 }welcome;
        
 picture {
+   /*
    text{     
       caption = "+";
       font_size = 48;
       font_color = 255,255,255;
-   }; 
+   };
+   */
+   bitmap { filename = "fixation.bmp"; preload = true; } ;
    x=0;y=0;
 }fixation; 
 
