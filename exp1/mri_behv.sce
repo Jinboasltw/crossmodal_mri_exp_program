@@ -7,7 +7,7 @@ button_codes = 1,2,3;
 scenario = "MRI Behv Part";    
 scenario_type = trials;
 $left_response = 1;
-$refreshrate = 60;
+$refreshrate = 144;
 $interval = '1000/$refreshrate';
 
 #no_logfile = true;
@@ -226,7 +226,8 @@ trial{
    stimulus_event  {  
       # placeholder - set by PCL
       sound snd1;  
-      time = 'int(100-0.5*$interval)';
+      # time = 'int(100-0.5*$interval)';
+		time = 100;
       response_active = true;
       target_button = $left_response;
       code="snd"; 
@@ -235,7 +236,8 @@ trial{
    stimulus_event  {  
       # placeholder - set by PCL
       picture pic1;
-      time = 'int(100-0.5*$interval)';
+      #time = 'int(100-0.5*$interval)';
+		time = 101;
 		response_active = false;
       code="vis"; 
    } pvis_event;
@@ -287,7 +289,8 @@ trial{
    stimulus_event  {  
       # placeholder - set by PCL
       sound snd1;  
-      time = 'int(100-0.5*$interval)';
+      # time = 'int(100-0.5*$interval)';
+		time = 100;
       response_active = true;
       target_button = $left_response;
       code="snd"; 
@@ -296,7 +299,8 @@ trial{
    stimulus_event  {  
       # placeholder - set by PCL
       picture pic1;
-      time = 'int(100-0.5*$interval)';
+      #time = 'int(100-0.5*$interval)';
+		time = 101;
 		response_active = false;
       code="vis"; 
    } vis_event;

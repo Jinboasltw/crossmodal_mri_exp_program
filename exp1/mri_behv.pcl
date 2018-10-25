@@ -1,8 +1,3 @@
-#main_trial.present();     
-#stim_event.set_time(300);
-#main_trial.present();  
-#stim.set_part(1,blue_box);           
-
 #--------------------------------------------------------------
 #                          SUB ROUTINE: Record
 #--------------------------------------------------------------
