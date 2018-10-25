@@ -280,8 +280,13 @@ if prac_marker == 1 then
 					prac_relax_counter = 0;
 				end;
 				if mod(i,prac_block_count) == 0 && prac_block_counter != prac_total_block then
-					block_info.set_caption("Finished: Part "+ string(int((i-mod(i,prac_block_count))/prac_block_count)) +"/"+string(prac_total_block)+"\nNext     : Part "+ string(int((i-mod(i,prac_block_count))/prac_block_count)+1) +"/"+string(prac_total_block),true);
-					block_trial.present();
+					if int((i-mod(i,prac_block_count))/prac_block_count) < prac_total_block then
+						block_info.set_caption("Finished: Part "+ string(int((i-mod(i,prac_block_count))/prac_block_count)) +"/"+string(prac_total_block)+"\nNext      : Part "+ string(int((i-mod(i,prac_block_count))/prac_block_count)+1) +"/"+string(prac_total_block),true);
+					else
+						block_info.set_caption("Finished: Part "+ string(int((i-mod(i,prac_block_count))/prac_block_count)) +"/"+string(prac_total_block)+"\nNext: Accuracy Check",true);
+					end;
+					
+				block_trial.present();
 					prac_block_counter = prac_block_counter+1;
 				end;     
 			i=i+1;  
@@ -294,7 +299,7 @@ if prac_marker == 1 then
 			summary_trial.present();
 		elseif pc_record < ac_limit then
 			god = 1;
-			tacc.set_caption(string(pc_record),true);
+			tacc.set_caption("Accuracy: "+string(pc_record*100)+" %",true);
 			tsug.set_caption("Redo Practice",true);
 			summary_trial.present();
 		end;
@@ -385,6 +390,7 @@ elseif prac_marker == 0 then
 				relax_counter = 0;
 			end;
 			if mod(i,block_count) == 0 && block_counter != total_block then
+				block_info.set_caption("Finished: Part "+ string(int((i-mod(i,block_count))/prac_block_count)) +"/"+string(total_block)+"\nNext      : Part "+ string(int((i-mod(i,block_count))/block_count)+1) +"/"+string(total_block),true);
 				block_trial.present();
 				block_counter = block_counter+1;
 			end;     
