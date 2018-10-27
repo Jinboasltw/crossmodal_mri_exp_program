@@ -92,7 +92,7 @@ picture {
       font_size = 24;
       font_color = 255,255,255;
    }acc;
-   x = 0;y = 100;
+   x = 0;y = 60;
    text {
       caption = "RT"; 
       font_size = 24;
@@ -104,7 +104,7 @@ picture {
       font_size = 24;
       font_color = 255,0,255;
    }sug; 
-   x = 0; y = -100;
+   x = 0; y = -60;
 }feed_back;
 
 picture {
@@ -113,7 +113,7 @@ picture {
       font_size = 24;
       font_color = 255,255,255;
    }tacc;
-   x = 0;y = 100; 
+   x = 0;y = 60; 
    text {
       caption = "Suggest"; 
       font_size = 24;
@@ -164,12 +164,22 @@ picture {
    }; 
    x = 0; y = -400;
 }bye;
-
+#--------------------------------------------------------------
+#                          Timming Setup
+#--------------------------------------------------------------
+$loading = 1000;
+$welcome_show_button_delay = 5000; 
+$fixation_show_at = 0; 
+$snd_show_at = 100;  
+$vis_show_at = 101;
+$blank_show_at = 'int(200-0.5*$interval)'; 
+$feedback_duration = 1000; 
 #--------------------------------------------------------------
 #                          Trial Setup
 #--------------------------------------------------------------
+
 trial{        
-   trial_duration = 100;
+   trial_duration = $loading;
    picture {
       text{     
          caption = "Loading...";
@@ -182,7 +192,7 @@ trial{
 }loading_trial;
 
 trial{        
-   trial_duration = 500;
+   trial_duration = $loading;
    picture {
       text{     
          caption = "loading success!";
@@ -207,7 +217,7 @@ trial{
    }welcome_event;
 
    picture welcome_2;
-   time = 5000;
+   time = $welcome_show_button_delay;
 }welcome_trial;
 
 trial{        
@@ -218,7 +228,7 @@ trial{
    
    stimulus_event {
       picture fixation;     
-      time = 0; 
+      time = $fixation_show_at; 
       code="fix";
 		response_active = false;
    } pfix_event;
@@ -227,7 +237,7 @@ trial{
       # placeholder - set by PCL
       sound snd1;  
       # time = 'int(100-0.5*$interval)';
-		time = 100;
+		time = $snd_show_at;
       response_active = true;
       target_button = $left_response;
       code="snd"; 
@@ -237,14 +247,14 @@ trial{
       # placeholder - set by PCL
       picture pic1;
       #time = 'int(100-0.5*$interval)';
-		time = 101;
+		time = $vis_show_at;
 		response_active = false;
       code="vis"; 
    } pvis_event;
                 
    stimulus_event  {  
       picture fixation; 
-      time = 'int(200-0.5*$interval)';
+      deltat = $blank_show_at;
 		response_active = false;
       code="blankScreen"; 
    } pbk_event;
@@ -252,11 +262,11 @@ trial{
 }pmain_trial;
 
 trial{        
-   trial_duration = 1000;
+   trial_duration = $feedback_duration;
    
    stimulus_event{
       picture feed_back;
-      deltat = 0; 
+      time = 0; 
       code="feed";       
    }feed_back_event;
 }feed_back_trial;
@@ -268,7 +278,8 @@ trial{
    
    stimulus_event{
       picture summary;
-      deltat = 0; 
+      time = 0;
+      #deltat = 0; 
       code="summary";       
    }summary_event;
 }summary_trial;
@@ -281,7 +292,7 @@ trial{
    
    stimulus_event {
       picture fixation;     
-      time = 0; 
+      time = $fixation_show_at; 
       code="fix";
 		response_active = false;
    } fix_event;
@@ -290,7 +301,7 @@ trial{
       # placeholder - set by PCL
       sound snd1;  
       # time = 'int(100-0.5*$interval)';
-		time = 100;
+		time = $snd_show_at;
       response_active = true;
       target_button = $left_response;
       code="snd"; 
@@ -300,14 +311,14 @@ trial{
       # placeholder - set by PCL
       picture pic1;
       #time = 'int(100-0.5*$interval)';
-		time = 101;
+		time = $vis_show_at;
 		response_active = false;
       code="vis"; 
    } vis_event;
                 
    stimulus_event  {  
       picture fixation; 
-      time = 'int(200-0.5*$interval)';
+      deltat = $blank_show_at;
 		response_active = false;
       code="blankScreen"; 
    } bk_event;
@@ -328,7 +339,7 @@ trial{
    
    stimulus_event{
       picture relax;
-      deltat = 92; 
+      time = 92; 
       code="relax";       
    }relax_event;
 }relax_trial;
@@ -340,7 +351,7 @@ trial{
    
    stimulus_event{
       picture block;
-      deltat = 92; 
+      time = 92; 
       code="block";       
    }block_event;
 }block_trial;
@@ -352,7 +363,7 @@ trial{
    
    stimulus_event{
       picture bye;
-      deltat = 92; 
+      time = 92; 
       code="bye";       
    }bye_event;
 }bye_trial;

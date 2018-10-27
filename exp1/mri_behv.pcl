@@ -2,11 +2,10 @@
 #                          SUB ROUTINE: Record
 #--------------------------------------------------------------
 string subj = logfile.subject();
-int trial_mark = 1;
 int index_count = 0;
 string COMMA = ",";
 string RETURN = "\n";
-string data_file_name = subj + "-data.csv";
+string data_file_name = "subj_" + subj + ".csv";
 output_file out = new output_file;
 out.open("./data/" + data_file_name);
 array<string> headings[9];
@@ -51,10 +50,10 @@ begin
 	stimulus_data last = stimulus_manager.last_stimulus_data();
 	if last.type() == stimulus_hit then
 		record("Correct");
-		record(string(last.reaction_time()));
+		record(string(last.reaction_time_double()));
 	elseif last.type() == stimulus_incorrect then
 		record("Wrong");
-		record(string(last.reaction_time()));
+		record(string(last.reaction_time_double()));
 	else
 		record("");
 		record("");
@@ -87,58 +86,56 @@ in.open( "./seq/seq.txt" );
 
 # in.set_delimiter( '\t' ); # for get_line()
 loading_trial.present(); 
-int PARA_TOTAL = 4;
-int TRIAL_TOTAL = 1500;
-int prac_times = 40;
+int PARA_TOTAL = 4;        # all condition control: vsize,vbrightness,apitch,alocation
+int TRIAL_TOTAL = 1500;    # total number of trials
+int prac_times = 40;       # practice times
 array<int> prac_trial_list[prac_times][PARA_TOTAL];
 int ii = 1;
 loop int vsize = 1 until vsize > 2
 begin
-   loop int vlightness = 1 until vlightness > 2
+   loop int vbrightness = 1 until vbrightness > 2
    begin       
       loop int apitch = 1 until apitch > 2
       begin
          loop int alocation = 1 until alocation > 5
          begin
-            loop int repeate = 1 until repeate > 1
-            begin
-               #term.print("visual size = " + string(vsize) + ", visual lightness = " + string(vlightness) + ", audio pitch = " + string(apitch) + ", audio location = " + string(alocation) + "\n");  
-               prac_trial_list[ii][1]=vsize; 
-               prac_trial_list[ii][2]=vlightness;
-               prac_trial_list[ii][3]=apitch;
-               prac_trial_list[ii][4]=alocation;
-               ii = ii + 1;
-               repeate = repeate + 1;
-            end;
+            #term.print("visual size = " + string(vsize) + ", visual lightness = " + string(vbrightness) + ", audio pitch = " + string(apitch) + ", audio location = " + string(alocation) + "\n");  
+            prac_trial_list[ii][1]=vsize; 
+            prac_trial_list[ii][2]=vbrightness;
+            prac_trial_list[ii][3]=apitch;
+            prac_trial_list[ii][4]=alocation;
+            ii = ii + 1;        
+            
             alocation = alocation + 1;
          end;
          apitch = apitch + 1;
       end;     
-      vlightness = vlightness + 1;
+      vbrightness = vbrightness + 1;
    end;
    vsize = vsize + 1; 
 end; 
 prac_trial_list.shuffle();
-
+# loading formal trial seq list
 array<int> trial_list[TRIAL_TOTAL][PARA_TOTAL];
 int count = 0;
 loop until
    in.end_of_file() || count == 1500 || !in.last_succeeded()
 begin
    count = count + 1;
-   trial_list[count][1] = in.get_int();
-   trial_list[count][2] = in.get_int();
-   trial_list[count][3] = in.get_int();
-   trial_list[count][4] = in.get_int();
+   trial_list[count][1] = in.get_int(); # vsize
+   trial_list[count][2] = in.get_int(); # vbrightness
+   trial_list[count][3] = in.get_int(); # apitch
+   trial_list[count][4] = in.get_int(); # alocation
    #term.print("visual size = " + string(prac_trial_list[count][1]) + ", visual lightness = " + string(prac_trial_list[count][2]) + ", audio pitch = " + string(prac_trial_list[count][3]) + ", audio location = " + string(prac_trial_list[count][4]) + "\n");
 end;  
-
+/*
 if !in.last_succeeded() then
    term.print( "Error while reading!\n" );
 elseif !in.end_of_file() then
    term.print( "Exceeded capacity!\n" );  
    term.print(string(count));
 end;
+*/
 done_trial.present();
 #--------------------------------------------------------------
 #                          Additional Setup
@@ -185,7 +182,7 @@ if prac_marker == 1 then
 				pvsize = prac_trial_list[i][1];        # 1 = big,2 = small,0 = none
 				pvbright = prac_trial_list[i][2];      # 1 = high bright,2 = low bright,0 = none
 				papitch = prac_trial_list[i][3];       # 1 = high pitch,2 = low pitch
-				paloc = prac_trial_list[i][4];         # 1 = Left 22.5 ,2 = Left 10,3 = Central 0; 4 = Right 10;5 = Right 22.5; 1-5 High Pitch; 6-10 Low Pitch
+				paloc = prac_trial_list[i][4];         # 1 = L2 Left 22.5 ,2 = L1 Left 10,3 = Z Central 0; 4 = R 1 Right 10;5 = R2 Right 22.5; 1-5 High Pitch; 6-10 Low Pitch
 				#term.print(string(vsize)+string(vbright)+"\n");
 				if papitch == 1 then
 					if paloc == 1 then
@@ -244,7 +241,9 @@ if prac_marker == 1 then
 				elseif paloc == 3 then
 					psnd_event.set_target_button({1,2});
 				end; 		 
+				
 				pmain_trial.present();
+				
 				stimulus_data plast = stimulus_manager.get_stimulus_data( stimulus_manager.stimulus_count( )-2 );
 				if plast.type() == stimulus_hit then
 					text_pc = "Correct";
@@ -415,7 +414,7 @@ until
 begin
    term.print( seq_vsize[i] );
    term.print( "\t" );
-   term.print( seq_vlightness[i] );
+   term.print( seq_vbrightness[i] );
    term.print( "\t" );
    term.print( seq_apitch[i] );
    term.print( "\t" );
@@ -430,7 +429,7 @@ end
 #loop int i = 1 until i > TRIAL_TOTAL
 #begin
 #   prac_trial_list[][1] = seq_vsize;
-#   prac_trial_list[][2] = seq_vlightness;
+#   prac_trial_list[][2] = seq_vbrightness;
 #   prac_trial_list[][3] = seq_apitch;
 #   prac_trial_list[][4] = seq_aloc;
    # 
@@ -449,7 +448,7 @@ int ii = 1;
 array<int> prac_trial_list[V_SIZE*V_LIGHTNESS*A_PITCH*A_LOCATION*REPEATE][4];
 loop int vsize = 1 until vsize > V_SIZE
 begin
-   loop int vlightness = 1 until vlightness > V_LIGHTNESS
+   loop int vbrightness = 1 until vbrightness > V_LIGHTNESS
    begin       
       loop int apitch = 1 until apitch > A_PITCH
       begin
@@ -457,9 +456,9 @@ begin
          begin
             loop int repeate = 1 until repeate > REPEATE
             begin
-               term.print("visual size = " + string(vsize) + ", visual lightness = " + string(vlightness) + ", audio pitch = " + string(apitch) + ", audio location = " + string(alocation) + "\n");  
+               term.print("visual size = " + string(vsize) + ", visual lightness = " + string(vbrightness) + ", audio pitch = " + string(apitch) + ", audio location = " + string(alocation) + "\n");  
                prac_trial_list[ii][1]=vsize; 
-               prac_trial_list[ii][2]=vlightness;
+               prac_trial_list[ii][2]=vbrightness;
                prac_trial_list[ii][3]=apitch;
                prac_trial_list[ii][4]=alocation;
                ii = ii + 1;
@@ -469,7 +468,7 @@ begin
          end;
          apitch = apitch + 1;
       end;     
-      vlightness = vlightness + 1;
+      vbrightness = vbrightness + 1;
    end;
    vsize = vsize + 1; 
 end;    
