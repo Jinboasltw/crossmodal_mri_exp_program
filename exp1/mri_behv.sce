@@ -172,7 +172,7 @@ $welcome_show_button_delay = 5000;
 $fixation_show_at = 0; 
 $snd_show_at = 100;  
 $vis_show_at = 101;
-$blank_show_at = 'int(200-0.5*$interval)'; 
+$blank_show_at = 'int(100-0.5*$interval)'; 
 $feedback_duration = 1000; 
 #--------------------------------------------------------------
 #                          Trial Setup
