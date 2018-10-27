@@ -97,7 +97,7 @@
 <experiment_id></experiment_id>
 <font_settings>
 <dpi>82</dpi>
-<font_smooth>1</font_smooth>
+<font_smooth>2</font_smooth>
 <use_dpi>1</use_dpi>
 <use_font_smooth>1</use_font_smooth>
 </font_settings>
@@ -162,7 +162,7 @@
 <maxpv></maxpv>
 <minpv></minpv>
 <nam>crossmodal_behv</nam>
-<one_processor>2</one_processor>
+<one_processor>1</one_processor>
 <oports></oports>
 <out_encrypt_key></out_encrypt_key>
 <pi_list></pi_list>
@@ -277,6 +277,39 @@
 <device_type>4</device_type>
 <dx_device_type>17</dx_device_type>
 <name>USB Multimedia Keyboard 2</name>
+</device>
+<device>
+<axis>
+<dead_zone>0</dead_zone>
+<max>1000</max>
+<min>-1000</min>
+<name>X t</name>
+<saturation>1</saturation>
+</axis>
+<axis>
+<dead_zone>0</dead_zone>
+<max>1000</max>
+<min>-1000</min>
+<name>Y t</name>
+<saturation>1</saturation>
+</axis>
+<axis>
+<dead_zone>0</dead_zone>
+<max>1000</max>
+<min>-1000</min>
+<name>Z t</name>
+<saturation>1</saturation>
+</axis>
+<axis>
+<dead_zone>0</dead_zone>
+<max>1000</max>
+<min>-1000</min>
+<name>Z Ël</name>
+<saturation>1</saturation>
+</axis>
+<device_type>1</device_type>
+<dx_device_type>21</dx_device_type>
+<name>BETOP BFM GAMEPAD</name>
 </device>
 <device>
 <axis>
@@ -585,88 +618,88 @@
 <rep>1</rep>
 <require_name_match>0</require_name_match>
 <reschg>1</reschg>
-<rng>0</rng>
-<rts>1</rts>
+<rng>1</rng>
+<rts>0</rts>
 <sce>
 <idv>
-<device_type>3</device_type>
-<dx_device_type>19</dx_device_type>
-<ibn>F</ibn>
-<ibn>J</ibn>
-<ibn>Tab</ibn>
-<idn>.Ø</idn>
+<device_type>1</device_type>
+<dx_device_type>21</dx_device_type>
+<ibn>	® 8</ibn>
+<ibn>	® 9</ibn>
+<ibn>	® 11</ibn>
+<idn>BETOP BFM GAMEPAD</idn>
 <index>0</index>
 <index>1</index>
 <index>2</index>
 <label></label>
 <label></label>
 <label></label>
-<offset>33</offset>
-<offset>36</offset>
-<offset>15</offset>
+<offset>56</offset>
+<offset>57</offset>
+<offset>59</offset>
 </idv>
 <overrides></overrides>
 <sfn>all_scenarios</sfn>
 </sce>
 <sce>
 <idv>
-<device_type>3</device_type>
-<dx_device_type>19</dx_device_type>
-<ibn>F</ibn>
-<ibn>J</ibn>
-<ibn>Tab</ibn>
-<idn>.Ø</idn>
+<device_type>1</device_type>
+<dx_device_type>21</dx_device_type>
+<ibn>	® 8</ibn>
+<ibn>	® 9</ibn>
+<ibn>	® 11</ibn>
+<idn>BETOP BFM GAMEPAD</idn>
 <index>0</index>
 <index>1</index>
 <index>2</index>
 <label></label>
 <label></label>
 <label></label>
-<offset>33</offset>
-<offset>36</offset>
-<offset>15</offset>
+<offset>56</offset>
+<offset>57</offset>
+<offset>59</offset>
 </idv>
 <overrides></overrides>
 <sfn>C:\Users\Administrator\Desktop\Exp_YueLab\Crossmodal_MRI\exp1\mri_behv.pcl</sfn>
 </sce>
 <sce>
 <idv>
-<device_type>3</device_type>
-<dx_device_type>19</dx_device_type>
-<ibn>F</ibn>
-<ibn>J</ibn>
-<ibn>Tab</ibn>
-<idn>.Ø</idn>
+<device_type>1</device_type>
+<dx_device_type>21</dx_device_type>
+<ibn>	® 8</ibn>
+<ibn>	® 9</ibn>
+<ibn>	® 11</ibn>
+<idn>BETOP BFM GAMEPAD</idn>
 <index>0</index>
 <index>1</index>
 <index>2</index>
 <label></label>
 <label></label>
 <label></label>
-<offset>33</offset>
-<offset>36</offset>
-<offset>15</offset>
+<offset>56</offset>
+<offset>57</offset>
+<offset>59</offset>
 </idv>
 <overrides></overrides>
 <sfn>C:\Users\Administrator\Desktop\Exp_YueLab\Crossmodal_MRI\exp1\mri_behv.sce</sfn>
 </sce>
 <sce>
 <idv>
-<device_type>3</device_type>
-<dx_device_type>19</dx_device_type>
-<ibn>F</ibn>
-<ibn>J</ibn>
-<ibn>Tab</ibn>
-<idn>.Ø</idn>
+<device_type>1</device_type>
+<dx_device_type>21</dx_device_type>
+<ibn>	® 8</ibn>
+<ibn>	® 9</ibn>
+<ibn>	® 11</ibn>
+<idn>BETOP BFM GAMEPAD</idn>
 <index>0</index>
 <index>1</index>
 <index>2</index>
 <label></label>
 <label></label>
 <label></label>
-<offset>33</offset>
-<offset>36</offset>
-<offset>15</offset>
+<offset>56</offset>
+<offset>57</offset>
+<offset>59</offset>
 </idv>
 <overrides></overrides>
 <sfn>C:\Users\Administrator\Desktop\Exp_YueLab\Crossmodal_MRI\exp1\mri_behv.exp</sfn>
@@ -721,7 +754,7 @@
 <smc>2</smc>
 <smd>16</smd>
 <smr>44100</smr>
-<srs>1</srs>
+<srs>0</srs>
 <sse>
 <s>
 <a></a>

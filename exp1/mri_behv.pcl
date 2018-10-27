@@ -302,8 +302,10 @@ if prac_marker == 1 then
 			tsug.set_caption("Redo Practice",true);
 			summary_trial.present();
 		end;
-	end;	
-elseif prac_marker == 0 then
+	end;
+	prac_marker = 0;	
+end;
+if prac_marker == 0 then
 	#--------------------------------------------------------------
 	#                          Show Formal Trials
 	#-------------------------------------------------------------- 

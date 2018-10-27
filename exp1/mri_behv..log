@@ -1,0 +1,465 @@
+Scenario - MRI Behv Part
+Logfile written - 10/27/2018 16:10:24
+
+Trial	Event Type	Code	Time	TTime	Uncertainty	Duration	Uncertainty	ReqTime	ReqDur	Stim Type	Pair Index
+
+3	Picture	welcome	30485	0	1	50207	1	0	next	other	0
+3	Response	3	122158	91672	1
+4	Picture	fix	122219	0	1	1111	1	0	next	other	0
+4	Sound	snd	123219	1000	1			1000		hit	7
+4	Picture	vis	123330	1111	1	2014	1	1010	next	other	0
+4	Picture	blankScreen	125344	3125	1	4375	1	2970	next	other	0
+4	Response	2	129677	7458	1
+5	Picture	feed	129719	0	1	10069	1	0	next	other	0
+7	Picture	fix	144858	0	1	1111	1	0	next	other	0
+7	Sound	snd	145858	1000	1			1000		hit	13
+7	Picture	vis	145969	1111	1	2014	1	1010	next	other	0
+7	Picture	blankScreen	147983	3125	1	1667	1	2970	next	other	0
+7	Response	1	149597	4740	1
+8	Picture	feed	149649	0	1	10069	1	0	next	other	0
+10	Picture	fix	164788	0	1	1042	1	0	next	other	0
+10	Sound	snd	165787	1000	1			1000		hit	19
+10	Picture	vis	165829	1042	1	2014	1	1010	next	other	0
+10	Picture	blankScreen	167843	3056	1	4653	1	2970	next	other	0
+10	Response	1	172397	7609	1
+11	Picture	feed	172496	0	1	10069	1	0	next	other	0
+13	Picture	fix	187634	0	1	1111	1	0	next	other	0
+13	Sound	snd	188634	1000	1			1000		hit	25
+13	Picture	vis	188746	1111	1	2014	1	1010	next	other	0
+13	Picture	blankScreen	190759	3125	1	4375	1	2970	next	other	0
+13	Response	1	195037	7402	1
+14	Picture	feed	195134	0	1	10069	1	0	next	other	0
+16	Picture	fix	213259	0	1	1042	1	0	next	other	0
+16	Sound	snd	214259	1000	1			1000		hit	31
+16	Picture	vis	214300	1042	1	2014	1	1010	next	other	0
+16	Picture	blankScreen	216314	3055	1	2083	1	2970	next	other	0
+16	Response	2	218316	5058	1
+17	Picture	feed	218398	0	1	10069	1	0	next	other	0
+19	Picture	fix	236522	0	1	1111	1	0	next	other	0
+19	Sound	snd	237522	1000	1			1000		hit	37
+19	Picture	vis	237633	1111	1	2014	1	1010	next	other	0
+19	Picture	blankScreen	239647	3125	1	3194	1	2970	next	other	0
+19	Response	2	242796	6274	1
+20	Picture	feed	242841	0	1	10069	1	0	next	other	0
+22	Picture	fix	260966	0	1	1042	1	0	next	other	0
+22	Sound	snd	261966	1000	1			1000		hit	43
+22	Picture	vis	262008	1042	1	2014	1	1010	next	other	0
+22	Picture	blankScreen	264021	3055	1	2014	1	2970	next	other	0
+22	Response	2	265996	5030	1
+23	Picture	feed	266035	0	1	10069	1	0	next	other	0
+25	Picture	fix	281174	0	1	1042	1	0	next	other	0
+25	Sound	snd	282174	1000	1			1000		hit	49
+25	Picture	vis	282216	1042	1	2014	1	1010	next	other	0
+25	Picture	blankScreen	284229	3055	1	4236	1	2970	next	other	0
+25	Response	2	288396	7222	1
+26	Picture	feed	288465	0	1	10069	1	0	next	other	0
+28	Picture	fix	304576	0	1	1042	1	0	next	other	0
+28	Sound	snd	305576	1000	1			1000		hit	55
+28	Picture	vis	305618	1042	1	2014	1	1010	next	other	0
+28	Picture	blankScreen	307632	3055	1	3333	1	2970	next	other	0
+28	Response	1	310875	6299	1
+29	Picture	feed	310965	0	1	10069	1	0	next	other	0
+31	Picture	fix	329089	0	1	1042	1	0	next	other	0
+31	Sound	snd	330089	1000	1			1000		hit	61
+31	Picture	vis	330131	1042	1	2014	1	1010	next	other	0
+31	Picture	blankScreen	332145	3055	1	3681	1	2970	next	other	0
+31	Response	1	335756	6667	1
+32	Picture	feed	335825	0	1	10069	1	0	next	other	0
+34	Picture	relax	351867	920	1	43610	1	920	next	other	0
+34	Response	3	395434	44488	1
+35	Picture	fix	395477	0	1	1042	1	0	next	other	0
+35	Sound	snd	396476	1000	1			1000		hit	69
+35	Picture	vis	396518	1042	1	2014	1	1010	next	other	0
+35	Picture	blankScreen	398532	3056	1	11389	1	2970	next	other	0
+35	Response	2	409834	14357	1
+36	Picture	feed	409921	0	1	10069	1	0	next	other	0
+36	Response	1	410074	153	1
+38	Picture	fix	428045	0	1	1042	1	0	next	other	0
+38	Sound	snd	429045	1000	1			1000		hit	76
+38	Picture	vis	429087	1042	1	2014	1	1010	next	other	0
+38	Picture	blankScreen	431101	3056	1	4583	1	2970	next	other	0
+38	Response	2	435594	7548	1
+39	Picture	feed	435684	0	1	10069	1	0	next	other	0
+41	Picture	fix	452836	0	1	1042	1	0	next	other	0
+41	Sound	snd	453836	1000	1			1000		hit	82
+41	Picture	vis	453878	1042	1	2014	1	1010	next	other	0
+41	Picture	blankScreen	455892	3055	1	2222	1	2970	next	other	0
+41	Response	1	458073	5237	1
+42	Picture	feed	458114	0	1	10069	1	0	next	other	0
+44	Picture	fix	476239	0	1	1042	1	0	next	other	0
+44	Sound	snd	477239	1000	1			1000		hit	88
+44	Picture	vis	477280	1042	1	2014	1	1010	next	other	0
+44	Picture	blankScreen	479294	3056	1	7778	1	2970	next	other	0
+44	Response	1	487033	10794	1
+45	Picture	feed	487072	0	1	10069	1	0	next	other	0
+47	Picture	fix	502210	0	1	1042	1	0	next	other	0
+47	Sound	snd	503210	1000	1			1000		hit	94
+47	Picture	vis	503252	1042	1	2014	1	1010	next	other	0
+47	Picture	blankScreen	505266	3055	1	3889	1	2970	next	other	0
+47	Response	2	509113	6903	1
+48	Picture	feed	509155	0	1	10069	1	0	next	other	0
+50	Picture	fix	524293	0	1	1042	1	0	next	other	0
+50	Sound	snd	525293	1000	1			1000		hit	100
+50	Picture	vis	525335	1042	1	2014	1	1010	next	other	0
+50	Picture	blankScreen	527348	3055	1	3819	1	2970	next	other	0
+50	Response	1	531112	6819	1
+51	Picture	feed	531168	0	1	10069	1	0	next	other	0
+53	Picture	fix	548320	0	1	1042	1	0	next	other	0
+53	Sound	snd	549320	1000	1			1000		hit	106
+53	Picture	vis	549362	1042	1	2014	1	1010	next	other	0
+53	Picture	blankScreen	551376	3055	1	2778	1	2970	next	other	0
+53	Response	2	554072	5752	1
+54	Picture	feed	554153	0	1	10069	1	0	next	other	0
+56	Picture	fix	572278	0	1	1042	1	0	next	other	0
+56	Sound	snd	573278	1000	1			1000		hit	112
+56	Picture	vis	573320	1042	1	2014	1	1010	next	other	0
+56	Picture	blankScreen	575333	3055	1	3750	1	2970	next	other	0
+56	Response	1	579032	6754	1
+57	Picture	feed	579083	0	1	10069	1	0	next	other	0
+59	Picture	fix	597208	0	1	1042	1	0	next	other	0
+59	Sound	snd	598208	1000	1			1000		incorrect	118
+59	Picture	vis	598250	1042	1	2014	1	1010	next	other	0
+59	Picture	blankScreen	600263	3055	1	2917	1	2970	next	other	0
+59	Response	2	603112	5904	1
+60	Picture	feed	603180	0	1	10069	1	0	next	other	0
+62	Picture	fix	618319	0	1	1042	1	0	next	other	0
+62	Sound	snd	619318	1000	1			1000		hit	124
+62	Picture	vis	619360	1042	1	2014	1	1010	next	other	0
+62	Picture	blankScreen	621374	3055	1	3055	1	2970	next	other	0
+62	Response	1	624391	6073	1
+63	Picture	feed	624429	0	1	10069	1	0	next	other	0
+65	Picture	block	640471	920	1	12569	1	920	next	other	0
+65	Response	3	652951	13400	1
+66	Picture	fix	653040	0	1	1042	1	0	next	other	0
+66	Sound	snd	654040	1000	1			1000		hit	132
+66	Picture	vis	654082	1042	1	2014	1	1010	next	other	0
+66	Picture	blankScreen	656095	3056	1	5972	1	2970	next	other	0
+66	Response	1	661991	8951	1
+67	Picture	feed	662067	0	1	10069	1	0	next	other	0
+69	Picture	fix	678178	0	1	1042	1	0	next	other	0
+69	Sound	snd	679178	1000	1			1000		hit	138
+69	Picture	vis	679220	1042	1	2014	1	1010	next	other	0
+69	Picture	blankScreen	681234	3055	1	2361	1	2970	next	other	0
+69	Response	2	683511	5332	1
+70	Picture	feed	683595	0	1	10069	1	0	next	other	0
+72	Picture	fix	699705	0	1	1042	1	0	next	other	0
+72	Sound	snd	700705	1000	1			1000		hit	144
+72	Picture	vis	700747	1042	1	2014	1	1010	next	other	0
+72	Picture	blankScreen	702761	3055	1	3125	1	2970	next	other	0
+72	Response	2	705830	6125	1
+73	Picture	feed	705886	0	1	10069	1	0	next	other	0
+75	Picture	fix	721997	0	1	1042	1	0	next	other	0
+75	Sound	snd	722997	1000	1			1000		incorrect	150
+75	Picture	vis	723038	1042	1	2014	1	1010	next	other	0
+75	Picture	blankScreen	725052	3055	1	3056	1	2970	next	other	0
+75	Response	1	728070	6073	1
+76	Picture	feed	728108	0	1	10069	1	0	next	other	0
+78	Picture	fix	743246	0	1	1042	1	0	next	other	0
+78	Sound	snd	744246	1000	1			1000		hit	156
+78	Picture	vis	744288	1042	1	2014	1	1010	next	other	0
+78	Picture	blankScreen	746302	3055	1	3333	1	2970	next	other	0
+78	Response	1	749590	6344	1
+79	Picture	feed	749635	0	1	10069	1	0	next	other	0
+81	Picture	fix	767759	0	1	1042	1	0	next	other	0
+81	Sound	snd	768759	1000	1			1000		hit	162
+81	Picture	vis	768801	1042	1	2014	1	1010	next	other	0
+81	Picture	blankScreen	770815	3055	1	2847	1	2970	next	other	0
+81	Response	1	773590	5830	1
+82	Picture	feed	773662	0	1	10069	1	0	next	other	0
+84	Picture	fix	791787	0	1	1042	1	0	next	other	0
+84	Sound	snd	792786	1000	1			1000		hit	168
+84	Picture	vis	792828	1042	1	2014	1	1010	next	other	0
+84	Picture	blankScreen	794842	3055	1	3611	1	2970	next	other	0
+84	Response	1	798389	6603	1
+85	Picture	feed	798453	0	1	10068	2	0	next	other	0
+87	Picture	fix	814564	0	1	1042	1	0	next	other	0
+87	Sound	snd	815564	1000	1			1000		hit	174
+87	Picture	vis	815605	1042	1	2014	1	1010	next	other	0
+87	Picture	blankScreen	817619	3056	1	6736	1	2970	next	other	0
+87	Response	1	824309	9745	1
+88	Picture	feed	824355	0	1	10069	1	0	next	other	0
+90	Picture	fix	841508	0	1	1042	1	0	next	other	0
+90	Sound	snd	842507	1000	1			1000		hit	180
+90	Picture	vis	842549	1042	1	2014	1	1010	next	other	0
+90	Picture	blankScreen	844563	3055	1	1319	1	2970	next	other	0
+90	Response	1	845829	4321	1
+91	Picture	feed	845882	0	1	10069	1	0	next	other	0
+93	Picture	fix	863035	0	1	1042	1	0	next	other	0
+93	Sound	snd	864035	1000	1			1000		hit	186
+93	Picture	vis	864076	1042	1	2014	1	1010	next	other	0
+93	Picture	blankScreen	866090	3055	1	2014	1	2970	next	other	0
+93	Response	1	868068	5034	1
+94	Picture	feed	868104	0	1	10069	1	0	next	other	0
+96	Picture	fix	886229	0	1	1042	1	0	next	other	0
+96	Sound	snd	887229	1000	1			1000		hit	192
+96	Picture	vis	887270	1042	1	2014	1	1010	next	other	0
+96	Picture	blankScreen	889284	3056	1	6042	1	2970	next	other	0
+96	Response	1	895268	9040	1
+97	Picture	feed	895326	0	1	10069	1	0	next	other	0
+99	Picture	fix	912478	0	1	1042	1	0	next	other	0
+99	Sound	snd	913478	1000	1			1000		hit	198
+99	Picture	vis	913520	1042	1	2014	1	1010	next	other	0
+99	Picture	blankScreen	915534	3056	1	3264	1	2970	next	other	0
+99	Response	1	918708	6230	1
+100	Picture	feed	918797	0	1	10069	1	0	next	other	0
+102	Picture	fix	935950	0	1	1042	1	0	next	other	0
+102	Sound	snd	936950	1000	1			1000		hit	204
+102	Picture	vis	936991	1042	1	2014	1	1010	next	other	0
+102	Picture	blankScreen	939005	3056	1	2569	1	2970	next	other	0
+102	Response	2	941507	5558	1
+103	Picture	feed	941575	0	1	10069	1	0	next	other	0
+105	Picture	fix	957685	0	1	1042	1	0	next	other	0
+105	Sound	snd	958685	1000	1			1000		hit	210
+105	Picture	vis	958727	1042	1	2014	1	1010	next	other	0
+105	Picture	blankScreen	960741	3055	1	3472	1	2970	next	other	0
+105	Response	2	964147	6462	1
+106	Picture	feed	964213	0	1	10069	1	0	next	other	0
+108	Picture	fix	981365	0	1	1042	1	0	next	other	0
+108	Sound	snd	982365	1000	1			1000		hit	216
+108	Picture	vis	982407	1042	1	2014	1	1010	next	other	0
+108	Picture	blankScreen	984421	3055	1	3403	1	2970	next	other	0
+108	Response	2	987747	6381	1
+109	Picture	feed	987824	0	1	10069	1	0	next	other	0
+111	Picture	fix	1003934	0	1	1042	1	0	next	other	0
+111	Sound	snd	1004934	1000	1			1000		hit	222
+111	Picture	vis	1004976	1042	1	2014	1	1010	next	other	0
+111	Picture	blankScreen	1006990	3056	1	5417	1	2970	next	other	0
+111	Response	2	1012306	8372	1
+112	Picture	feed	1012406	0	1	10069	1	0	next	other	0
+114	Picture	fix	1028517	0	1	1042	1	0	next	other	0
+114	Sound	snd	1029517	1000	1			1000		hit	228
+114	Picture	vis	1029559	1042	1	2014	1	1010	next	other	0
+114	Picture	blankScreen	1031572	3055	1	2569	1	2970	next	other	0
+114	Response	1	1034066	5549	1
+115	Picture	feed	1034142	0	1	10069	1	0	next	other	0
+117	Picture	fix	1051294	0	1	1042	1	0	next	other	0
+117	Sound	snd	1052294	1000	1			1000		hit	234
+117	Picture	vis	1052336	1042	1	2014	1	1010	next	other	0
+117	Picture	blankScreen	1054350	3055	1	5764	1	2970	next	other	0
+117	Response	2	1060066	8772	1
+118	Picture	feed	1060113	0	1	10069	1	0	next	other	0
+120	Picture	fix	1075252	0	1	1042	1	0	next	other	0
+120	Sound	snd	1076252	1000	1			1000		hit	240
+120	Picture	vis	1076294	1042	1	2014	1	1010	next	other	0
+120	Picture	blankScreen	1078307	3055	1	3125	1	2970	next	other	0
+120	Response	1	1081346	6094	1
+121	Picture	feed	1081432	0	1	10069	1	0	next	other	0
+123	Picture	fix	1096571	0	1	1042	1	0	next	other	0
+123	Sound	snd	1097571	1000	1			1000		hit	246
+123	Picture	vis	1097613	1042	1	2014	1	1010	next	other	0
+123	Picture	blankScreen	1099626	3055	1	2083	1	2970	next	other	0
+123	Response	1	1101666	5095	1
+124	Picture	feed	1101710	0	1	10069	1	0	next	other	0
+126	Picture	block	1120737	920	1	14583	1	920	next	other	0
+126	Response	3	1135265	15448	1
+127	Picture	summary	1135320	0	1	100139	1	0	next	other	0
+127	Response	3	1229184	93864	1
+
+
+Event Type	Code	Type	Response	RT	RT Uncertainty	Time	Uncertainty	Duration	Uncertainty	ReqTime	ReqDur
+
+Picture	welcome	other				30485	1	50207	1	0	next
+Picture	fix	other				122219	1	1111	1	0	next
+Sound	snd	hit	2	6458	2	123219	1			1000
+Picture	vis	other				123330	1	2014	1	1010	next
+Picture	blankScreen	other				125344	1	4375	1	2970	next
+Picture	feed	other				129719	1	10069	1	0	next
+Picture	fix	other				144858	1	1111	1	0	next
+Sound	snd	hit	1	3740	2	145858	1			1000
+Picture	vis	other				145969	1	2014	1	1010	next
+Picture	blankScreen	other				147983	1	1667	1	2970	next
+Picture	feed	other				149649	1	10069	1	0	next
+Picture	fix	other				164788	1	1042	1	0	next
+Sound	snd	hit	1	6610	2	165787	1			1000
+Picture	vis	other				165829	1	2014	1	1010	next
+Picture	blankScreen	other				167843	1	4653	1	2970	next
+Picture	feed	other				172496	1	10069	1	0	next
+Picture	fix	other				187634	1	1111	1	0	next
+Sound	snd	hit	1	6402	2	188634	1			1000
+Picture	vis	other				188746	1	2014	1	1010	next
+Picture	blankScreen	other				190759	1	4375	1	2970	next
+Picture	feed	other				195134	1	10069	1	0	next
+Picture	fix	other				213259	1	1042	1	0	next
+Sound	snd	hit	2	4058	2	214259	1			1000
+Picture	vis	other				214300	1	2014	1	1010	next
+Picture	blankScreen	other				216314	1	2083	1	2970	next
+Picture	feed	other				218398	1	10069	1	0	next
+Picture	fix	other				236522	1	1111	1	0	next
+Sound	snd	hit	2	5274	2	237522	1			1000
+Picture	vis	other				237633	1	2014	1	1010	next
+Picture	blankScreen	other				239647	1	3194	1	2970	next
+Picture	feed	other				242841	1	10069	1	0	next
+Picture	fix	other				260966	1	1042	1	0	next
+Sound	snd	hit	2	4030	2	261966	1			1000
+Picture	vis	other				262008	1	2014	1	1010	next
+Picture	blankScreen	other				264021	1	2014	1	2970	next
+Picture	feed	other				266035	1	10069	1	0	next
+Picture	fix	other				281174	1	1042	1	0	next
+Sound	snd	hit	2	6222	2	282174	1			1000
+Picture	vis	other				282216	1	2014	1	1010	next
+Picture	blankScreen	other				284229	1	4236	1	2970	next
+Picture	feed	other				288465	1	10069	1	0	next
+Picture	fix	other				304576	1	1042	1	0	next
+Sound	snd	hit	1	5299	2	305576	1			1000
+Picture	vis	other				305618	1	2014	1	1010	next
+Picture	blankScreen	other				307632	1	3333	1	2970	next
+Picture	feed	other				310965	1	10069	1	0	next
+Picture	fix	other				329089	1	1042	1	0	next
+Sound	snd	hit	1	5667	2	330089	1			1000
+Picture	vis	other				330131	1	2014	1	1010	next
+Picture	blankScreen	other				332145	1	3681	1	2970	next
+Picture	feed	other				335825	1	10069	1	0	next
+Picture	relax	other				351867	1	43610	1	920	next
+Picture	fix	other				395477	1	1042	1	0	next
+Sound	snd	hit	2	13358	2	396476	1			1000
+Picture	vis	other				396518	1	2014	1	1010	next
+Picture	blankScreen	other				398532	1	11389	1	2970	next
+Picture	feed	other				409921	1	10069	1	0	next
+Picture	fix	other				428045	1	1042	1	0	next
+Sound	snd	hit	2	6548	2	429045	1			1000
+Picture	vis	other				429087	1	2014	1	1010	next
+Picture	blankScreen	other				431101	1	4583	1	2970	next
+Picture	feed	other				435684	1	10069	1	0	next
+Picture	fix	other				452836	1	1042	1	0	next
+Sound	snd	hit	1	4237	2	453836	1			1000
+Picture	vis	other				453878	1	2014	1	1010	next
+Picture	blankScreen	other				455892	1	2222	1	2970	next
+Picture	feed	other				458114	1	10069	1	0	next
+Picture	fix	other				476239	1	1042	1	0	next
+Sound	snd	hit	1	9795	2	477239	1			1000
+Picture	vis	other				477280	1	2014	1	1010	next
+Picture	blankScreen	other				479294	1	7778	1	2970	next
+Picture	feed	other				487072	1	10069	1	0	next
+Picture	fix	other				502210	1	1042	1	0	next
+Sound	snd	hit	2	5903	2	503210	1			1000
+Picture	vis	other				503252	1	2014	1	1010	next
+Picture	blankScreen	other				505266	1	3889	1	2970	next
+Picture	feed	other				509155	1	10069	1	0	next
+Picture	fix	other				524293	1	1042	1	0	next
+Sound	snd	hit	1	5820	2	525293	1			1000
+Picture	vis	other				525335	1	2014	1	1010	next
+Picture	blankScreen	other				527348	1	3819	1	2970	next
+Picture	feed	other				531168	1	10069	1	0	next
+Picture	fix	other				548320	1	1042	1	0	next
+Sound	snd	hit	2	4752	2	549320	1			1000
+Picture	vis	other				549362	1	2014	1	1010	next
+Picture	blankScreen	other				551376	1	2778	1	2970	next
+Picture	feed	other				554153	1	10069	1	0	next
+Picture	fix	other				572278	1	1042	1	0	next
+Sound	snd	hit	1	5754	2	573278	1			1000
+Picture	vis	other				573320	1	2014	1	1010	next
+Picture	blankScreen	other				575333	1	3750	1	2970	next
+Picture	feed	other				579083	1	10069	1	0	next
+Picture	fix	other				597208	1	1042	1	0	next
+Sound	snd	incorrect	2	4904	2	598208	1			1000
+Picture	vis	other				598250	1	2014	1	1010	next
+Picture	blankScreen	other				600263	1	2917	1	2970	next
+Picture	feed	other				603180	1	10069	1	0	next
+Picture	fix	other				618319	1	1042	1	0	next
+Sound	snd	hit	1	5073	2	619318	1			1000
+Picture	vis	other				619360	1	2014	1	1010	next
+Picture	blankScreen	other				621374	1	3055	1	2970	next
+Picture	feed	other				624429	1	10069	1	0	next
+Picture	block	other				640471	1	12569	1	920	next
+Picture	fix	other				653040	1	1042	1	0	next
+Sound	snd	hit	1	7951	2	654040	1			1000
+Picture	vis	other				654082	1	2014	1	1010	next
+Picture	blankScreen	other				656095	1	5972	1	2970	next
+Picture	feed	other				662067	1	10069	1	0	next
+Picture	fix	other				678178	1	1042	1	0	next
+Sound	snd	hit	2	4333	2	679178	1			1000
+Picture	vis	other				679220	1	2014	1	1010	next
+Picture	blankScreen	other				681234	1	2361	1	2970	next
+Picture	feed	other				683595	1	10069	1	0	next
+Picture	fix	other				699705	1	1042	1	0	next
+Sound	snd	hit	2	5125	2	700705	1			1000
+Picture	vis	other				700747	1	2014	1	1010	next
+Picture	blankScreen	other				702761	1	3125	1	2970	next
+Picture	feed	other				705886	1	10069	1	0	next
+Picture	fix	other				721997	1	1042	1	0	next
+Sound	snd	incorrect	1	5073	2	722997	1			1000
+Picture	vis	other				723038	1	2014	1	1010	next
+Picture	blankScreen	other				725052	1	3056	1	2970	next
+Picture	feed	other				728108	1	10069	1	0	next
+Picture	fix	other				743246	1	1042	1	0	next
+Sound	snd	hit	1	5344	2	744246	1			1000
+Picture	vis	other				744288	1	2014	1	1010	next
+Picture	blankScreen	other				746302	1	3333	1	2970	next
+Picture	feed	other				749635	1	10069	1	0	next
+Picture	fix	other				767759	1	1042	1	0	next
+Sound	snd	hit	1	4830	2	768759	1			1000
+Picture	vis	other				768801	1	2014	1	1010	next
+Picture	blankScreen	other				770815	1	2847	1	2970	next
+Picture	feed	other				773662	1	10069	1	0	next
+Picture	fix	other				791787	1	1042	1	0	next
+Sound	snd	hit	1	5603	2	792786	1			1000
+Picture	vis	other				792828	1	2014	1	1010	next
+Picture	blankScreen	other				794842	1	3611	1	2970	next
+Picture	feed	other				798453	1	10068	2	0	next
+Picture	fix	other				814564	1	1042	1	0	next
+Sound	snd	hit	1	8745	2	815564	1			1000
+Picture	vis	other				815605	1	2014	1	1010	next
+Picture	blankScreen	other				817619	1	6736	1	2970	next
+Picture	feed	other				824355	1	10069	1	0	next
+Picture	fix	other				841508	1	1042	1	0	next
+Sound	snd	hit	1	3321	2	842507	1			1000
+Picture	vis	other				842549	1	2014	1	1010	next
+Picture	blankScreen	other				844563	1	1319	1	2970	next
+Picture	feed	other				845882	1	10069	1	0	next
+Picture	fix	other				863035	1	1042	1	0	next
+Sound	snd	hit	1	4034	2	864035	1			1000
+Picture	vis	other				864076	1	2014	1	1010	next
+Picture	blankScreen	other				866090	1	2014	1	2970	next
+Picture	feed	other				868104	1	10069	1	0	next
+Picture	fix	other				886229	1	1042	1	0	next
+Sound	snd	hit	1	8040	2	887229	1			1000
+Picture	vis	other				887270	1	2014	1	1010	next
+Picture	blankScreen	other				889284	1	6042	1	2970	next
+Picture	feed	other				895326	1	10069	1	0	next
+Picture	fix	other				912478	1	1042	1	0	next
+Sound	snd	hit	1	5230	2	913478	1			1000
+Picture	vis	other				913520	1	2014	1	1010	next
+Picture	blankScreen	other				915534	1	3264	1	2970	next
+Picture	feed	other				918797	1	10069	1	0	next
+Picture	fix	other				935950	1	1042	1	0	next
+Sound	snd	hit	2	4558	2	936950	1			1000
+Picture	vis	other				936991	1	2014	1	1010	next
+Picture	blankScreen	other				939005	1	2569	1	2970	next
+Picture	feed	other				941575	1	10069	1	0	next
+Picture	fix	other				957685	1	1042	1	0	next
+Sound	snd	hit	2	5462	2	958685	1			1000
+Picture	vis	other				958727	1	2014	1	1010	next
+Picture	blankScreen	other				960741	1	3472	1	2970	next
+Picture	feed	other				964213	1	10069	1	0	next
+Picture	fix	other				981365	1	1042	1	0	next
+Sound	snd	hit	2	5382	2	982365	1			1000
+Picture	vis	other				982407	1	2014	1	1010	next
+Picture	blankScreen	other				984421	1	3403	1	2970	next
+Picture	feed	other				987824	1	10069	1	0	next
+Picture	fix	other				1003934	1	1042	1	0	next
+Sound	snd	hit	2	7373	2	1004934	1			1000
+Picture	vis	other				1004976	1	2014	1	1010	next
+Picture	blankScreen	other				1006990	1	5417	1	2970	next
+Picture	feed	other				1012406	1	10069	1	0	next
+Picture	fix	other				1028517	1	1042	1	0	next
+Sound	snd	hit	1	4549	2	1029517	1			1000
+Picture	vis	other				1029559	1	2014	1	1010	next
+Picture	blankScreen	other				1031572	1	2569	1	2970	next
+Picture	feed	other				1034142	1	10069	1	0	next
+Picture	fix	other				1051294	1	1042	1	0	next
+Sound	snd	hit	2	7772	2	1052294	1			1000
+Picture	vis	other				1052336	1	2014	1	1010	next
+Picture	blankScreen	other				1054350	1	5764	1	2970	next
+Picture	feed	other				1060113	1	10069	1	0	next
+Picture	fix	other				1075252	1	1042	1	0	next
+Sound	snd	hit	1	5094	2	1076252	1			1000
+Picture	vis	other				1076294	1	2014	1	1010	next
+Picture	blankScreen	other				1078307	1	3125	1	2970	next
+Picture	feed	other				1081432	1	10069	1	0	next
+Picture	fix	other				1096571	1	1042	1	0	next
+Sound	snd	hit	1	4095	2	1097571	1			1000
+Picture	vis	other				1097613	1	2014	1	1010	next
+Picture	blankScreen	other				1099626	1	2083	1	2970	next
+Picture	feed	other				1101710	1	10069	1	0	next
+Picture	block	other				1120737	1	14583	1	920	next
+Picture	summary	other				1135320	1	100139	1	0	next
