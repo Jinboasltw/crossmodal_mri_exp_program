@@ -1,5 +1,5 @@
 <ver>20.2</ver>
-<efn>C:\Users\Administrator\Desktop\Exp_YueLab\Crossmodal_MRI\exp1\mri_behv.exp</efn>
+<efn>I:\Crossmodal_MRI_Behv_Part\mri_behv.exp</efn>
 <author></author>
 <con>
 <pause>P</pause>
@@ -40,12 +40,12 @@
 <lfn></lfn>
 </docs>
 <dp_list></dp_list>
-<dsd>C:\Users\Administrator\Desktop\Exp_YueLab\Crossmodal_MRI\exp1\stim</dsd>
+<dsd>I:\Crossmodal_MRI_Behv_Part\stim</dsd>
 <dxv>8</dxv>
 <efs>
-<filename>C:\Users\Administrator\Desktop\Exp_YueLab\Crossmodal_MRI\exp1\mri_behv.pcl</filename>
-<filename>C:\Users\Administrator\Desktop\Exp_YueLab\Crossmodal_MRI\exp1\mri_behv.sce</filename>
-<filename>C:\Users\Administrator\Desktop\Exp_YueLab\Crossmodal_MRI\exp1\mri_behv.exp</filename>
+<filename>I:\Crossmodal_MRI_Behv_Part\mri_behv.pcl</filename>
+<filename>I:\Crossmodal_MRI_Behv_Part\mri_behv.sce</filename>
+<filename>I:\Crossmodal_MRI_Behv_Part\mri_behv.exp</filename>
 </efs>
 <exclusive_mouse>1</exclusive_mouse>
 <exp_version></exp_version>
@@ -133,20 +133,20 @@
 <pindex>4294967295</pindex>
 </chan>
 </ip_chans>
-<lfd>C:\Users\Administrator\Desktop\Exp_YueLab\Crossmodal_MRI\exp1</lfd>
+<lfd>I:\Crossmodal_MRI_Behv_Part</lfd>
 <lnb>0</lnb>
-<lno>0</lno>
+<lno>4</lno>
 <log>
-<append_counter>0</append_counter>
+<append_counter>1</append_counter>
 <delimiter>9</delimiter>
 <general_list>1</general_list>
 <its>0</its>
-<meta>0</meta>
+<meta>1</meta>
 <pien>0</pien>
 <set_def_file></set_def_file>
 <stimulus_list>1</stimulus_list>
 <subject_id></subject_id>
-<subject_id_pol>0</subject_id_pol>
+<subject_id_pol>1</subject_id_pol>
 <video_list>1</video_list>
 <warnings>1</warnings>
 </log>
@@ -264,21 +264,6 @@
 <name>HID-compliant mouse</name>
 </device>
 <device>
-<device_type>4</device_type>
-<dx_device_type>17</dx_device_type>
-<name>USB Multimedia Keyboard</name>
-</device>
-<device>
-<device_type>4</device_type>
-<dx_device_type>17</dx_device_type>
-<name>USB Multimedia Keyboard 1</name>
-</device>
-<device>
-<device_type>4</device_type>
-<dx_device_type>17</dx_device_type>
-<name>USB Multimedia Keyboard 2</name>
-</device>
-<device>
 <axis>
 <dead_zone>0</dead_zone>
 <max>1000</max>
@@ -309,7 +294,17 @@
 </axis>
 <device_type>1</device_type>
 <dx_device_type>21</dx_device_type>
-<name>BETOP BFM GAMEPAD</name>
+<name>BETOP 2175 BFM</name>
+</device>
+<device>
+<device_type>4</device_type>
+<dx_device_type>17</dx_device_type>
+<name>Dell USB Wired Multimedia Keyboard</name>
+</device>
+<device>
+<device_type>4</device_type>
+<dx_device_type>17</dx_device_type>
+<name>Dell USB Wired Multimedia Keyboard 1</name>
 </device>
 <device>
 <axis>
@@ -627,7 +622,7 @@
 <ibn>	® 8</ibn>
 <ibn>	® 9</ibn>
 <ibn>	® 11</ibn>
-<idn>BETOP BFM GAMEPAD</idn>
+<idn>BETOP 2175 BFM</idn>
 <index>0</index>
 <index>1</index>
 <index>2</index>
@@ -648,7 +643,7 @@
 <ibn>	® 8</ibn>
 <ibn>	® 9</ibn>
 <ibn>	® 11</ibn>
-<idn>BETOP BFM GAMEPAD</idn>
+<idn>BETOP 2175 BFM</idn>
 <index>0</index>
 <index>1</index>
 <index>2</index>
@@ -660,7 +655,7 @@
 <offset>59</offset>
 </idv>
 <overrides></overrides>
-<sfn>C:\Users\Administrator\Desktop\Exp_YueLab\Crossmodal_MRI\exp1\mri_behv.pcl</sfn>
+<sfn>I:\Crossmodal_MRI_Behv_Part\mri_behv.pcl</sfn>
 </sce>
 <sce>
 <idv>
@@ -669,7 +664,7 @@
 <ibn>	® 8</ibn>
 <ibn>	® 9</ibn>
 <ibn>	® 11</ibn>
-<idn>BETOP BFM GAMEPAD</idn>
+<idn>BETOP 2175 BFM</idn>
 <index>0</index>
 <index>1</index>
 <index>2</index>
@@ -681,7 +676,7 @@
 <offset>59</offset>
 </idv>
 <overrides></overrides>
-<sfn>C:\Users\Administrator\Desktop\Exp_YueLab\Crossmodal_MRI\exp1\mri_behv.sce</sfn>
+<sfn>I:\Crossmodal_MRI_Behv_Part\mri_behv.sce</sfn>
 </sce>
 <sce>
 <idv>
@@ -690,7 +685,7 @@
 <ibn>	® 8</ibn>
 <ibn>	® 9</ibn>
 <ibn>	® 11</ibn>
-<idn>BETOP BFM GAMEPAD</idn>
+<idn>BETOP 2175 BFM</idn>
 <index>0</index>
 <index>1</index>
 <index>2</index>
@@ -702,7 +697,7 @@
 <offset>59</offset>
 </idv>
 <overrides></overrides>
-<sfn>C:\Users\Administrator\Desktop\Exp_YueLab\Crossmodal_MRI\exp1\mri_behv.exp</sfn>
+<sfn>I:\Crossmodal_MRI_Behv_Part\mri_behv.exp</sfn>
 </sce>
 <sct>
 <capture_device>
