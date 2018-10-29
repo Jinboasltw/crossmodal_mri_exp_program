@@ -266,8 +266,8 @@ if prac_marker == 1 then
 				sug.set_caption(text_rt_suggest,true);
 				feed_back_trial.present();
 	  
-				interval_trials.set_duration(iti[random(1,4)]);
-				interval_trials.present();  
+				#interval_trials.set_duration(iti[random(1,4)]);
+				#interval_trials.present();  
 				
 				if mod(i,prac_relax_count) == 0 && mod(i,prac_block_count) != 0 then
 					relax_trial.present();
