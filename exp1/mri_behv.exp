@@ -1,4 +1,4 @@
-<ver>20.2</ver>
+<ver>20</ver>
 <efn>I:\Crossmodal_MRI_Behv_Part\mri_behv.exp</efn>
 <author></author>
 <con>
@@ -108,21 +108,21 @@
 <sce>1</sce>
 <sce>1</sce>
 </do_upload>
-<host></host>
+<host>222.200.170.38</host>
 <id>{D8F55DEB-D327-491F-BB66-32800B365910}</id>
 <idle_timeout>0</idle_timeout>
 <login_timeout>0</login_timeout>
-<mode>0</mode>
+<mode>1</mode>
 <no_upload></no_upload>
-<password></password>
+<password>75781FF9A5555EFF</password>
 <pasv>0</pasv>
 <port>21</port>
-<remote_dir></remote_dir>
+<remote_dir>/home/ftpuser</remote_dir>
 <sync>1</sync>
 <testing>0</testing>
 <type>0</type>
-<upload>0</upload>
-<username></username>
+<upload>1</upload>
+<username>ftpuser</username>
 </ftp>
 <idc>0</idc>
 <idt>1000</idt>
@@ -135,7 +135,7 @@
 </ip_chans>
 <lfd>I:\Crossmodal_MRI_Behv_Part</lfd>
 <lnb>0</lnb>
-<lno>4</lno>
+<lno>3</lno>
 <log>
 <append_counter>1</append_counter>
 <delimiter>9</delimiter>
@@ -160,7 +160,7 @@
 <use>0</use>
 </lslset>
 <maxpv></maxpv>
-<minpv></minpv>
+<minpv>19.0</minpv>
 <nam>crossmodal_behv</nam>
 <one_processor>1</one_processor>
 <oports></oports>
@@ -168,6 +168,7 @@
 <pi_list></pi_list>
 <plat>1</plat>
 <port_devices></port_devices>
+<pversion>2</pversion>
 <rdl>
 <device>
 <abs_axis>
@@ -264,6 +265,16 @@
 <name>HID-compliant mouse</name>
 </device>
 <device>
+<device_type>4</device_type>
+<dx_device_type>17</dx_device_type>
+<name>Dell USB Wired Multimedia Keyboard</name>
+</device>
+<device>
+<device_type>4</device_type>
+<dx_device_type>17</dx_device_type>
+<name>Dell USB Wired Multimedia Keyboard 1</name>
+</device>
+<device>
 <axis>
 <dead_zone>0</dead_zone>
 <max>1000</max>
@@ -297,16 +308,6 @@
 <name>BETOP 2175 BFM</name>
 </device>
 <device>
-<device_type>4</device_type>
-<dx_device_type>17</dx_device_type>
-<name>Dell USB Wired Multimedia Keyboard</name>
-</device>
-<device>
-<device_type>4</device_type>
-<dx_device_type>17</dx_device_type>
-<name>Dell USB Wired Multimedia Keyboard 1</name>
-</device>
-<device>
 <axis>
 <dead_zone>0</dead_zone>
 <max>1000</max>
@@ -336,10 +337,8 @@
 <name>Speech Recognition</name>
 <speech>
 <engine_class></engine_class>
-<lang></lang>
 <mc>0</mc>
 <rw>0</rw>
-<sil>0</sil>
 <uwd>0</uwd>
 <vocab></vocab>
 </speech>

@@ -151,8 +151,7 @@ int prac_block_count = 20; # in total 2 blocks at practice stage
 int prac_total_block = 2;
 double ac_limit = 0.80;
 int rt_limit = 1000;
-int prac_marker = 0; 
-int block_counter = 0;
+int prac_marker = 1; 
 #--------------------------------------------------------------
 #                          Start PRESENTATION
 #-------------------------------------------------------------- 
@@ -381,8 +380,7 @@ if prac_marker == 0 then
 			if mod(i,relax_count) == 0 && mod(i,block_count) != 0 then
 				relax_trial.present();
 			end;
-			block_counter = block_counter+1;
-			if mod(i,block_count) == 0 && block_counter != total_block then
+			if mod(i,block_count) == 0 && int((i-mod(i,block_count))/block_count) != total_block then
 				block_info.set_caption("Finished: Part "+ string(int((i-mod(i,block_count))/block_count)) +"/"+string(total_block)+"\nNext      : Part "+ string(int((i-mod(i,block_count))/block_count)+1) +"/"+string(total_block),true);
 				block_trial.present();
 			end;     
